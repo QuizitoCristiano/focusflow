@@ -66,8 +66,8 @@ export const Login = () => {
                 validation.data.password
             );
 
-            // Opcional: Se quiser exigir a verificação antes de liberar o acesso
-            if (userCredential?.user && !userCredential.user.emailVerified) {
+            // Se a variável 'userCredential' na verdade já for o objeto do usuário (User):
+            if (userCredential && !userCredential.emailVerified) {
                 toast.error("Por favor, confirme seu e-mail antes de acessar.");
                 navigate("/verify-email", { replace: true });
                 return;

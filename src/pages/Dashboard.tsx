@@ -10,7 +10,7 @@ export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { entries, loading: loadingEntries } = useScreenTime();
-  const { generalGoalMinutes, appGoals, loading: loadingGoals } = useGoals();
+  const { generalGoalMinutes, loading: loadingGoals } = useGoals();
 
   // 1. Processamento de Datas (Últimos 7 Dias: de 6 dias atrás até Hoje)
   const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
