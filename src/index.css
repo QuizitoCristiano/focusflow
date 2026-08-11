@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fundo e Superfícies */
+  --color-bg-main: #121212;
+  --color-bg-card: #2A2D32;
+
+  /* Destaques e Ações */
+  --color-brand-alert: #FF5733;
+  --color-brand-success: #10B981;
+  --color-brand-accent: #00D2FF;
+
+  /* Tipografia */
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #9CA3AF;
+}
+
+/* Meteoro vindo da DIREITA para a ESQUERDA */
+@keyframes meteorRight {
+  0% {
+    transform: rotate(100deg) translateX(0);
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(100deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+
+/* Meteoro vindo da DIREITA para a ESQUERDA */
+@keyframes meteorRight {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+/* Meteoro vindo da ESQUERDA para a DIREITA (Cruzando em X) */
+@keyframes meteorLeft {
+  0% {
+    transform: rotate(-35deg) translateX(0);
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(-35deg) translateX(1000px);
+    opacity: 0;
+  }
+}
+
+.animate-meteor-right {
+  animation: meteorRight 5s linear infinite;
+}
+
+.animate-meteor-left {
+  animation: meteorLeft 5s linear infinite;
+}
+
+/* Rastro de gradiente da direita */
+.meteor-line-right {
+  background: linear-gradient(90deg, rgba(255, 87, 51, 0.4), transparent);
+}
+
+/* Rastro de gradiente da esquerda (invertido para o rastro ficar certo) */
+.meteor-line-left {
+  background: linear-gradient(90deg, transparent, rgba(255, 87, 51, 0.4));
+}

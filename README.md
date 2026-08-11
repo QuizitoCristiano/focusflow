@@ -36,6 +36,7 @@ O usuário configura suas metas no FocusFlow em **três níveis principais**:
 3. **Horário de Maior Atenção (Janela de Descanso):** Definição de intervalos críticos em que o uso deve ser evitado ou reduzido (ex: entre 22:00 e 06:00).
 
 ---
+Opa!!
 
 ## 📱 Estrutura das 9 Telas da Aplicação
 
