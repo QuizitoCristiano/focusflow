@@ -93,6 +93,7 @@ export const ScreenTime: React.FC = () => {
     const totalMins = (parseInt(singleHours, 10) || 0) * 60 + (parseInt(singleMinutes, 10) || 0);
     if (totalMins <= 0 || !singleAppName) return;
 
+    // ... dentro da sua função submit:
     await addScreenTimeEntry({
       date: singleDate,
       appName: singleAppName,
@@ -101,6 +102,9 @@ export const ScreenTime: React.FC = () => {
       source: singleSource,
       notes: singleNote
     });
+
+    // Reseta a nota após salvar (faz o setSingleNote ser utilizado):
+    setSingleNote('');
 
     setIsSingleRegisterOpen(false);
   };
@@ -242,11 +246,10 @@ export const ScreenTime: React.FC = () => {
           </div>
         </div>
 
-        <div className={`p-3.5 rounded-xl border text-xs font-medium flex items-center gap-2 ${
-          isOverGoal
+        <div className={`p-3.5 rounded-xl border text-xs font-medium flex items-center gap-2 ${isOverGoal
             ? 'bg-brand-alert/10 border-brand-alert/30 text-brand-alert'
             : 'bg-brand-success/10 border-brand-success/30 text-brand-success'
-        }`}>
+          }`}>
           {isOverGoal ? (
             <>
               <AlertTriangle className="w-4 h-4 shrink-0" />
@@ -284,13 +287,12 @@ export const ScreenTime: React.FC = () => {
                 <span className="w-8 text-text-muted font-bold">{item.day}</span>
                 <div className="flex-1 bg-bg-main h-6 rounded-lg overflow-hidden relative border border-white/5 flex items-center">
                   <div
-                    className={`h-full rounded-lg transition-all ${
-                      isPeak
+                    className={`h-full rounded-lg transition-all ${isPeak
                         ? 'bg-brand-accent'
                         : item.mins > totalGoalMinutes
                           ? 'bg-brand-alert'
                           : 'bg-white/20'
-                    }`}
+                      }`}
                     style={{ width: `${item.mins > 0 ? Math.max(barWidth, 8) : 0}%` }}
                   />
                   <span className="absolute left-2 text-[10px] font-bold text-text-main z-10">
@@ -315,11 +317,10 @@ export const ScreenTime: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
-                  selectedCategory === cat
+                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${selectedCategory === cat
                     ? 'bg-brand-accent/15 border-brand-accent text-brand-accent'
                     : 'bg-bg-main border-white/5 text-text-muted hover:text-text-main'
-                }`}
+                  }`}
               >
                 {cat}
               </button>

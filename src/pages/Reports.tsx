@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  FileText, 
   Calendar, 
   Download, 
   TrendingDown, 
-  TrendingUp, 
   CheckCircle2, 
   XCircle, 
-  AlertTriangle, 
-  Sparkles, 
-  Clock, 
-  Layers, 
-  Printer, 
-  Share2, 
-  ChevronRight,
+  AlertTriangle,
   ShieldCheck
 } from 'lucide-react';
 
