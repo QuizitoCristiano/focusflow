@@ -43,7 +43,7 @@ const ensureUserDocument = async (
   user: User
 ): Promise<void> => {
   await setDoc(
-    doc(db, "Users", user.uid),
+    doc(db, "users", user.uid),
     {
       uid: user.uid,
       email: user.email,
@@ -91,7 +91,7 @@ export const registerWithEmail = async (
   const user = credential.user;
 
   await setDoc(
-    doc(db, "Users", user.uid),
+    doc(db, "users", user.uid),
     {
       uid: user.uid,
       email: user.email,
